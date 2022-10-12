@@ -1,8 +1,13 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class GameFrame extends JFrame {
     public GameFrame(){
-        this.add(new GamePanel());
+        GamePanel panel = new GamePanel();
+        panel.setBackground(Color.WHITE);
+        BorderLayout layout = new BorderLayout();
+        layout.addLayoutComponent(panel, BorderLayout.CENTER);
+        this.setLayout(layout);
         this.setTitle("Snake");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false); //game window will be of a fixed size
