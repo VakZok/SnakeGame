@@ -33,7 +33,7 @@ public class GamePanel extends JPanel {
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HIGHT));
-        this.setBackground(Color.WHITE);
+        this.setBackground(Color.BLACK);
         this.setFocusable(true); //why?
         //this.addKeyListener(e -> ); //to be finished
         //startGame();
@@ -42,7 +42,6 @@ public class GamePanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        //Graphics2D g2d = (Graphics2D) g;
         drawGrid(g);
     }
 
@@ -54,6 +53,8 @@ public class GamePanel extends JPanel {
         Since the screen hight equals the screen widht, we can do the same in one go
          */
         for (int i = 0; i < SCREEN_HIGHT / UNIT_SIZE; i++) {
+            //Customized line color
+            g.setColor(Color.GRAY);
             //the vertical lines are drawn from the x-coordinate of the right side of each unit size, from y equals 0 to y equals the screen hight
             g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HIGHT);
             //the horizontal lines are drawn from the y-coordninate of the top side of each unit size, from x equals 0 to x equals the screen width
